@@ -1,0 +1,10 @@
+alphabet: {0, 1}
+start: q0
+accepting: {q_accept}
+
+q0 (_, _ -> $, q1)
+
+q1 (0, _ -> AA, q1)
+q1 (1, A -> "", q1)
+
+q1 (_, $ -> "", q_accept)
