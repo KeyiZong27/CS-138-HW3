@@ -2,7 +2,7 @@ alphabet: {a, b}
 start: q0
 accepting: {q_accept}
 
-q0 (_, _ -> $S, q1)
+q0 (_, _ -> S$, q1)
 
 q1 (_, S -> AX, q1)
 q1 (_, S -> YB, q1)

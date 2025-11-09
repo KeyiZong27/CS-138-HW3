@@ -1,18 +1,18 @@
 alphabet: {0, 1}
-start: q0
+start: q_start
 accepting: {q_accept}
 
-q0 (_, _ -> $, q1)
+q_start (_, _ -> $, q0)
 
+q0 (1, _ -> X, q0)
+q0 (0, _ -> X, q1)
+
+q1 (0, _ -> X, q1)
 q1 (1, _ -> X, q1)
-q1 (0, _ -> X, q2)
 
-q2 (0, _ -> X, q2)
-q2 (1, _ -> X, q2)
+q1 (_, _ -> "", q2)
 
-q2 (_, _ -> "", q3)
+q2 (0, X -> "", q2)
+q2 (1, X -> "", q2)
 
-q3 (0, X -> "", q3)
-q3 (1, X -> "", q3)
-
-q3 (_, $ -> "", q_accept)
+q2 (_, $ -> "", q_accept)
