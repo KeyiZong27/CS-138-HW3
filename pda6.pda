@@ -13,4 +13,5 @@ q1 (_, S -> AX, q1) (_, S -> YB, q1) (_, S -> ZbZaZ, q1)
    (a, a -> a, q1) (b, b -> b, q1)
    (_, $ -> _, q_accept)
 
-q_accept
+q_accept  (_, _ -> _, q_accept)
+
