@@ -1,9 +1,26 @@
 alphabet: {0, 1}
 start: q0
-accepting: {q_accept}
+accepting: {q6}
 
 q0 (_, _ -> $, q1)
 
-q1 (0, _ -> XX, q1) (1, X -> _, q1) (_, $ -> _, q_accept)
+q1 (1, $ -> $A, q2)
+   (0, $ -> $BB, q3)
+   (_, $ -> _, q6)
 
-q_accept  (_, _ -> _, q_accept)
+q2 (1, A -> AA, q2)
+   (0, A -> _, q4)
+
+q4 (_, A -> _, q5)
+   (_, $ -> $B, q3)
+
+q5 (_, A -> A, q2)
+   (_, $ -> $, q1)
+
+q3 (0, B -> BBB, q3)
+   (1, B -> _, q7)
+
+q7 (_, B -> B, q3)
+   (_, $ -> $, q1)
+
+q6 (_, _ -> _, q6)
